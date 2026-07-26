@@ -1,59 +1,83 @@
-# 小豆 (Xiao Dou) IP 绘画 Prompt 进阶指南
+# 小豆 (Xiao Dou) IP 绘图 Prompt 进阶与防漂移指南
 
-本指南提供了使用 `generate_image` 生成“小豆”IP 形象封面图的具体 Prompt 构效模版与关键词词库。
+本指南提供了使用 `generate_image` 生成“小豆”IP 形象封面图与配图时的 **防漂移垫图 (Image Reference)** 机制与 Prompt 词库。
 
 ---
 
-## 1. 小豆 IP 形象 Core Prompts
+## 1. 防漂移关键：垫图 (Image Reference) 机制
 
-在调用 AI 绘图时，在 Prompt 头部或核心主体部分输入以下固定描述词：
+在进行 AI 绘图时，仅依靠文字 Prompt 容易造成线条变粗、瞳孔细节过度渲染或画风漂移。**必须配合垫图传入 `ImagePaths`**：
 
-```text
-Cute yellow round bean character ("Xiao Dou"), minimalist face with simple dots for eyes and a tiny warm smile, smooth bean-shaped body, no hair, short chubby limbs, soft cute aesthetic.
+```json
+{
+  "ImagePaths": [
+    "/Users/suxiaohan/Desktop/小豆-skill/封面图/contextwindow.png",
+    "/Users/suxiaohan/Desktop/小豆-skill/配图/1.jpg"
+  ]
+}
 ```
 
-### 常见情绪与动作词表 (Expressions & Actions)
+在 Prompt 开线处加入以下固定一致性指令：
 
-| 情绪/状态 | 画面描述 Prompt 词汇 |
+```text
+Use the exact character design, line art style, face features, and color palette of Xiao Dou ("小豆") from the provided reference images.
+```
+
+---
+
+## 2. 小豆 IP 精细化 Prompt 描述表
+
+### 角色形象描述词 (Character Descriptors)
+
+```text
+Xiao Dou ("小豆"): Smooth round yellow bean shape, soft dark brown hand-drawn vector outline, two simple solid black dot eyes (no pupils, no eyelashes), tiny warm curved smile mouth (∪), short chubby bean-style limbs without fingers, soft yellow pastel fill (#F8E088).
+
+AI / Large Model Bean ("深灰豆豆"): Same bean body shape and soft brown outline as Xiao Dou, but with a dark gray color fill (#4A4D52), representing AI systems. NO blue cat, NO mechanical parts.
+```
+
+### 常用情境动作与道具表
+
+| 场景 | 精确 Prompt 描述 |
 | :--- | :--- |
-| **陷入困惑/思考** | `thinking pose with hand on chin, question mark above head, cute confused expression` |
-| **痛苦/焦虑/负担重** | `sweating, teary eyes, carrying a giant heavy tangled cable knot on back, overwhelmed expression` |
-| **得意/灵感爆发** | `happy excited face, bright glowing lightbulb floating above head, pointing finger forward` |
-| **动手解决/执行** | `holding oversized scissors cutting a film strip, focused cute expression` |
-| **讲师/专业展示** | `wearing round spectacles, holding a wooden pointer stick, standing in front of a white whiteboard` |
-| **吃力奔波** | `pushing a heavy wheelbarrow full of coins, sweating, tired but working hard` |
+| **思考/发愁** | `Xiao Dou looking confused with hand on chin, tiny question mark floating above head` |
+| **重构剪辑** | `Xiao Dou holding film scissors and a paintbrush, carefully editing movie film frames` |
+| **防御证据** | `Xiao Dou holding a round shield labeled "有动机的推理" with an earnest cute expression` |
+| **灵感觉察** | `Xiao Dou reading a diary book, taking a thoughtful pause, looking out an open window` |
+| **困境与压迫** | `Xiao Dou sweating under a giant tangled cable knot on back, teary-eyed but cute` |
 
 ---
 
-## 2. 构图与风格约束 Prompt
+## 3. 标准 4 宫格 Prompt 模版 (含垫图约束)
 
 ```text
-Style: Modern flat vector illustration, warm pastel background, soft lighting, clean lines, high clarity, cute storybook art style.
-Composition: Wide 16:9 panoramic banner layout, clean typography placement, high visual contrast between left and right sides, clear central split with VS badge.
-```
+Use the exact character design, line art style, face features, and color palette of Xiao Dou ("小豆") from the reference images.
 
----
+Create a 2x2 grid infographic illustration featuring Xiao Dou (yellow bean) and dark gray bean AI.
+Clean vector storybook style, soft pastel palette, minimalist dark brown outlines, clear black Chinese text.
 
-## 3. 三大实战 Prompt 模版
+Layout: Pure 2x2 4-panel grid layout. Absolutely NO dark or black hashtag banner at the bottom.
 
-### 模版一：左右对比式 (Left-Right Contrast)
+Panel 1 (Top-Left):
+- Title: "[宫格1标题]"
+- Subtitle: "[宫格1释义]"
+- Visual: Xiao Dou staring at [场景1]; Dark gray bean AI [动作1].
+- Bottom Quote Line: "[总结金句1]"
 
-```text
-A wide banner illustration featuring the cute yellow bean character ("Xiao Dou").
-Split view composition:
-Left side (Pain Point): Dim gray-orange background with text "[左侧大标题]". Xiao Dou looks stressed and sweating under [痛点象形物体].
-Center: A stylish "VS" badge dividing the two sides.
-Right side (Solution): Bright fresh green background with text "[右侧大标题]". Xiao Dou looks happy and confident, using [解决工具/动作] to simplify everything.
-Overall: Clean vector art style, bold Chinese typography, warm and friendly tone.
-```
+Panel 2 (Top-Right):
+- Title: "[宫格2标题]"
+- Subtitle: "[宫格2释义]"
+- Visual: Xiao Dou holding [工具2], [动作2].
+- Bottom Quote Line: "[总结金句2]"
 
-### 模版二：流程与原理拆解式 (Flow Diagram)
+Panel 3 (Bottom-Left):
+- Title: "[宫格3标题]"
+- Subtitle: "[宫格3释义]"
+- Visual: Dark gray bean AI admitting mistake; Xiao Dou holding a shield to block evidence.
+- Bottom Quote Line: "[总结金句3]"
 
-```text
-A widescreen tech blog header illustration starring the cute yellow bean character ("Xiao Dou").
-Title at top: Bold Chinese text "[主标题]" with a dark rounded pill badge subtitle "[副标题金句]".
-Left: Xiao Dou with a question mark, looking at an entrance labeled "[输入标签]".
-Center: A futuristic clean window UI showing a bulleted checklist: [要点1], [要点2], [要点3], with an execution button.
-Right: Xiao Dou with a glowing lightbulb above head, standing by an open door labeled "[输出标签]" leading to a sunny landscape.
-Vector illustration, pastel colors, cute and high quality.
+Panel 4 (Bottom-Right):
+- Title: "[宫格4标题]"
+- Subtitle: "[宫格4释义]"
+- Visual: Xiao Dou reading a book, pausing in thought, looking out an open window.
+- Bottom Quote Line: "[总结金句4]"
 ```

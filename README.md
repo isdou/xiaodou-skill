@@ -5,12 +5,13 @@
 </p>
 
 <p align="center">
-  <b>根据文章内容自动提取核心概念，使用“小豆” IP 形象生成高品质微信公众号/博客【宽幅封面图】与【2x2 四宫格正文知识配图】。</b>
+  <b>根据文章内容自动提取核心概念，使用“小豆” IP 形象生成高品质微信公众号/博客【宽幅封面图】与【2x2 四宫格正文知识配图】。</b><br/>
+  <i>自带强制垫图 (Image Reference) 机制，彻底解决 IP 形象漂移问题。</i>
 </p>
 
 <p align="center">
   <a href="#-效果展示-showcase"><img src="https://img.shields.io/badge/Visual-Showcase-FFD166?style=for-the-badge&logo=storybook&logoColor=black" alt="Showcase" /></a>
-  <a href="#-安装与使用指南"><img src="https://img.shields.io/badge/Antigravity-Skill-00F5D4?style=for-the-badge&logo=google&logoColor=black" alt="AGY Skill" /></a>
+  <a href="#-防漂移垫图机制"><img src="https://img.shields.io/badge/IP-Anti--Drift-00F5D4?style=for-the-badge&logo=google&logoColor=black" alt="IP Lock" /></a>
   <a href="#-三大核心模式规范"><img src="https://img.shields.io/badge/Layout-Templates-7B2CBF?style=for-the-badge&logo=design&logoColor=white" alt="Templates" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-4CC9F0?style=for-the-badge" alt="License" /></a>
 </p>
@@ -23,6 +24,21 @@
 
 ---
 
+## 🔒 防漂移垫图机制 (Image Reference)
+
+为了防止 AI 生成时出现“小豆形象漂移”（如画成 3D 渲染、死黑重线或混入机械猫物种），Skill 内置了**垫图 (Image Reference)** 机制。调用绘图工具时自动传入项目自带的标准参照图路径：
+
+```json
+{
+  "ImagePaths": [
+    "[workspace]/封面图/contextwindow.png",
+    "[workspace]/配图/1.jpg"
+  ]
+}
+```
+
+---
+
 ## 🖼️ 效果展示 (Showcase)
 
 ### 一、 宽幅文章封面图 (Cover Banners)
@@ -30,18 +46,12 @@
 尺寸规范：16:9 / 2.35:1 宽幅 Banner（如 2100×900px），适合文章顶部或公众号头条封面。
 
 #### 1. 流程与概念拆解架构
-> **应用场景**：Prompt 工程、AI 原理、工作流拆解文章。
-
 <img src="封面图/27D7DB6E-03B0-4739-9F17-054F58190C3E.png" alt="揭秘 System Prompt 封面" width="100%" />
 
 #### 2. 具象化痛点 vs 解决方案对比
-> **应用场景**：长上下文管理、AI 性能优化、技术选型对比。
-
 <img src="封面图/contextwindow.png" alt="Context Window 病 vs 截断+重置 封面" width="100%" />
 
 #### 3. 抽象成本与效率对比
-> **应用场景**：Token 成本分析、Prompt 缓存 (Prompt Caching) 机制。
-
 <img src="封面图/token.png" alt="高效共享背景 vs 背景重建 封面" width="100%" />
 
 ---
@@ -50,72 +60,34 @@
 
 尺寸规范：2×2 矩形矩阵（整体 16:9 或 4:3 比例），适合放置于文章正文中段作为核心知识总结长图。
 
-#### 1. 配图范例 1 (无最下黑条的四宫格标准图)
-> **视觉亮点**：四宫格结构清晰，内容呈逻辑递进，最下方纯净无黑色标签栏。
-
+#### 1. 配图范例 1 (原生家庭与 System Prompt - 4 宫格标准图)
 <img src="配图/1.jpg" alt="标准 4 宫格正文配图 1" width="100%" />
 
-#### 2. 配图范例 2 (正确四宫格布局 - 需去除最下黑条)
-> **排版与内容完全正确**：此范例的 4 宫格排版和逻辑插图十分标准，生成时只需**去掉最底部那行黑色 Hashtag 标签栏**（不生成黑条文本）即可达到 100% 理想效果。
+#### 2. 配图范例 2 (大模型与人类幻觉 - 垫图精准锁定 IP 样例)
+> <b>全员豆豆 IP</b>：黄豆豆代表人类，深灰豆豆代表 AI，画面底部无黑色标签栏。
 
-<img src="配图/2.jpg" alt="标准 4 宫格正文配图 2" width="100%" />
-
----
-
-## 🎨 小豆 (Xiao Dou) IP 视觉设计规范
-
-| 属性 | 视觉设计标准 |
-| :--- | :--- |
-| **基本形态** | 黄色、圆滚滚、软萌可爱的豆豆形象（Yellow round cute bean character） |
-| **表情与姿态** | 极其丰富的戏剧感表现（困惑发愁、戴眼镜授课、手持剪刀裁切、推独轮车、亮起灵感灯泡、推开自由之门等） |
-| **画风与配色** | 二维矢量手绘风（Flat storybook vector style），配以淡雅低饱和色调（暖黄、柔绿、灰蓝、紫灰等） |
-| **排版与文字** | 中文黑体标题高对比度呈现，支持胶囊型标签、气泡框对话与代码块结合 |
+<img src="配图/大模型幻觉_4宫格_正确小豆.jpg" alt="大模型幻觉 4 宫格配图" width="100%" />
 
 ---
 
-## 📐 三大核心模式规范
+## 🎨 小豆 (Xiao Dou) IP 视觉解剖规范
 
-### 1. 左右对比模式 (Left-Right Contrast)
-- **左侧 (痛点/旧态)**：暖灰/冷色背景，困惑或汗流浃背的小豆，搭配重物、线团、混乱元素。
-- **中央 (分割)**：高对比度 `VS` 徽章或闪电分割线。
-- **右侧 (终局/新态)**：清新绿/阳光背景，自信快乐的小豆，搭配打勾、剪刀、整理箱等元素。
-
-### 2. 流程拆解模式 (Workflow Breakdown)
-- **顶栏**：醒目主标题 + 深色椭圆胶囊框金句（如 `AI听不见你想的，只执行你写的`）。
-- **流程三段式**：`输入端 (想法/疑问)` ➔ `核心控制 UI (代码框/规则点)` ➔ `输出端 (灯泡小豆/自由门)`。
-
-### 3. 2×2 四宫格正文配图模式 (4-Grid Matrix)
-每个宫格自上而下严格遵循 4 层结构：
-1. **顶栏**：粗体中文大标题
-2. **解说栏**：1-2 句核心释义段落
-3. **视觉区**：小豆 IP 配合具体概念图解
-4. **底栏**：核心金句总结行
-
-> 💡 **关键细节控制**：生成 4 宫格图片时，保持整洁纯净，不要在画面最下方生成黑色 Hashtag 标签栏。
+| 视觉属性 | 解剖标准 | 避坑禁忌 (Negative Prompt) |
+| :--- | :--- | :--- |
+| **身体形态** | 极简椭圆马铃薯/豆子体，高宽比 1.2:1，填充暖黄低饱和度色 (`#F8E088`) | ❌ 严禁画成带脖子、立体 3D 或肌肉线条 |
+| **线条勾勒** | 柔和深咖啡色/炭灰矢量手绘描边 (2-3px) | ❌ 严禁死黑硬边缘、无描边或粗黑重墨 |
+| **五官表达** | 双眼为纯黑实心小圆点 (`● ●`)，嘴巴为微小弧形笑 (`∪`) | ❌ 严禁瞳孔、双眼皮、睫毛或真实人嘴 |
+| **肢体形态** | 短小圆润无手指的豆豆四肢 | ❌ 严禁出现五指分明的人类手脚 |
+| **AI/大模型角色** | **全员豆豆化**：AI 角色必须为深灰色豆豆体 (`#4A4D52`) | ❌ 严禁出现蓝色机械猫、金属机器人或外星人 |
 
 ---
 
 ## 💻 示例用法 (Usage Example)
 
 ### 在 Google Antigravity / AGY Agent 中使用
-只需将本项目置于你的 Workspace 中，或在 Agent 中提及：
 
 ```text
-“请帮我根据下面这篇关于【AI 智能体记忆机制】的文章，用小豆 Skill 生成一张 16:9 封面 Banner 和一张正文 4 宫格视觉配图。”
-```
-
-### 提示词 (Prompt) 模板参考
-
-```text
-A 2x2 grid infographic illustration featuring the cute yellow round bean character ("Xiao Dou").
-Vector storybook illustration style, soft pastel palette, clear black Chinese text.
-
-Layout: Pure 4-panel grid layout. Do NOT include any bottom black hashtag banner.
-
-Panel 1 (Top-Left): Title "原生家庭是第一段 System Prompt", illustration of Xiao Dou with a brain model and a layered pyramid.
-Panel 2 (Top-Right): Title "静默运行与他者的 Prompt", illustration of code editor window and speech bubbles.
-Panel 3 (Bottom-Left): Title "人的 Prompt 可以被自我覆写", comparison between frozen code and human narrative editor.
-Panel 4 (Bottom-Right): Title "在它运行的那一秒识别它", Xiao Dou recognizing the prompt and opening a door to freedom.
+“请帮我根据下面这篇关于【大模型幻觉】的文章，用小豆 Skill 生成一张正文 4 宫格视觉配图（请挂载垫图锁住小豆 IP）。”
 ```
 
 ---
@@ -124,19 +96,17 @@ Panel 4 (Bottom-Right): Title "在它运行的那一秒识别它", Xiao Dou reco
 
 ```text
 小豆-skill/
-├── SKILL.md                          # 🌟 AGY Skill 主指令定义文件
+├── SKILL.md                          # 🌟 AGY Skill 主指令定义文件 (含垫图与防漂移机制)
 ├── README.md                         # 📖 项目说明与展示文档
 ├── references/                       # 📚 进阶规范参考库
 │   ├── infographic_4grid_guide.md    # 📐 2x2 四宫格配图专项指南
-│   ├── ip_prompt_guide.md            # 🎨 小豆 IP Prompt 词库与 AI 绘图模板
+│   ├── ip_prompt_guide.md            # 🎨 小豆 IP 形象解剖与 Prompt 词库
 │   └── case_analysis.md              # 🔍 落地案例深度拆解
 ├── 封面图/                           # 🖼️ 宽幅 Banner 封面落地样例
-│   ├── 27D7DB6E-03B0-4739-9F17-054F58190C3E.png
-│   ├── contextwindow.png
-│   └── token.png
 └── 配图/                             # 🖼️ 正文 4 宫格配图落地样例
-    ├── 1.jpg                         # 样例 1 (四宫格标准图)
-    └── 2.jpg                         # 样例 2 (四宫格标准图，生成时去掉最下黑条即可)
+    ├── 1.jpg                         # 样例 1 (原生家庭 System Prompt)
+    ├── 2.jpg                         # 样例 2 (你看不到的 System Prompt)
+    └── 大模型幻觉_4宫格_正确小豆.jpg   # 样例 3 (大模型幻觉 - 垫图精准锁定 IP)
 ```
 
 ---
