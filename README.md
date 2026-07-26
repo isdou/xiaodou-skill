@@ -1,7 +1,7 @@
 # 🎨 小豆 IP 文章封面图与 4 宫格正文配图生成器 (Xiao Dou Skill)
 
 <p align="center">
-  <img src="封面图/大模型幻觉_封面Banner.jpg" alt="小豆 IP 封面展示" width="100%" />
+  <img src="%E5%B0%81%E9%9D%A2%E5%9B%BE/hallucination_cover_banner.jpg" alt="小豆 IP 封面展示" width="100%" />
 </p>
 
 <p align="center">
@@ -69,29 +69,29 @@
 ### 一、 宽幅文章封面图 (Cover Banners)
 
 #### 1. 揭秘大模型与人类幻觉
-![揭秘大模型与人类幻觉 封面](封面图/大模型幻觉_封面Banner.jpg)
+![揭秘大模型与人类幻觉 封面](%E5%B0%81%E9%9D%A2%E5%9B%BE/hallucination_cover_banner.jpg)
 
 #### 2. 揭秘 System Prompt (流程拆解架构)
-![揭秘 System Prompt 封面](封面图/27D7DB6E-03B0-4739-9F17-054F58190C3E.png)
+![揭秘 System Prompt 封面](%E5%B0%81%E9%9D%A2%E5%9B%BE/27D7DB6E-03B0-4739-9F17-054F58190C3E.png)
 
 #### 3. Context Window 病 vs 截断+重置 (左右对比架构)
-![Context Window 封面](封面图/contextwindow.png)
+![Context Window 封面](%E5%B0%81%E9%9D%A2%E5%9B%BE/contextwindow.png)
 
 #### 4. 高效共享背景 vs 背景重建 (成本对比架构)
-![Token 成本对比 封面](封面图/token.png)
+![Token 成本对比 封面](%E5%B0%81%E9%9D%A2%E5%9B%BE/token.png)
 
 ---
 
 ### 二、 正文 2×2 四宫格知识配图 (Article 4-Grid Infographics)
 
-#### 1. 大模型与人类幻觉 (4 宫格最新示范)
-![大模型与人类幻觉 4宫格配图](配图/大模型幻觉_4宫格_最新.jpg)
+#### 1. 大模型与人类幻觉 (4 宫格示范图)
+![大模型与人类幻觉 4宫格配图](%E9%85%8D%E5%9B%BE/hallucination_4grid_infographic.jpg)
 
 #### 2. 原生家庭是第一段 System Prompt (四宫格标准图 1)
-![原生家庭 System Prompt 配图](配图/1.jpg)
+![原生家庭 System Prompt 配图](%E9%85%8D%E5%9B%BE/1.jpg)
 
 #### 3. 你看不见的 System Prompt (四宫格标准图 2)
-![你看不见的 System Prompt 配图](配图/2.jpg)
+![你看不见的 System Prompt 配图](%E9%85%8D%E5%9B%BE/2.jpg)
 
 ---
 
@@ -119,12 +119,12 @@
 │   ├── ip_prompt_guide.md            # 🎨 小豆 IP 形象解剖与 Prompt 词库
 │   └── case_analysis.md              # 🔍 落地案例深度拆解
 ├── 封面图/                           # 🖼️ 宽幅 Banner 封面落地样例
-│   ├── 大模型幻觉_封面Banner.jpg     # 🌟 最新生成的 16:9 封面
+│   ├── hallucination_cover_banner.jpg # 🌟 最新 16:9 封面
 │   ├── 27D7DB6E-03B0-4739-9F17-054F58190C3E.png
 │   ├── contextwindow.png
 │   └── token.png
 └── 配图/                             # 🖼️ 正文 4 宫格配图落地样例
-    ├── 大模型幻觉_4宫格_最新.jpg       # 🌟 最新 4 宫格配图
+    ├── hallucination_4grid_infographic.jpg # 🌟 最新 4 宫格配图
     ├── 1.jpg                         # 样例 1 (原生家庭 System Prompt)
     └── 2.jpg                         # 样例 2 (你看不到的 System Prompt)
 ```
