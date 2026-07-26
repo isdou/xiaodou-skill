@@ -26,26 +26,26 @@
 
 ---
 
-## 2. 合格与禁用标准对比
+## 2. 样例对比与微调原则
 
-| 对比项 | 标注 1 (1.jpg - 合格标准) | 标注 2 (2.jpg - 禁用格式) |
-| :--- | :--- | :--- |
-| **画面整洁度** | 干净清爽，聚焦 4 宫格知识表达 | 底部强行挂载黑色标签栏，分散注意力 |
-| **最底行元素** | 宫格 3 与 4 自有的总结文字行 | 最下方有一行黑色底色 `#豆豆 #底层逻辑...` 标签 |
-| **使用建议** | **✅ 唯一推荐标准** | **❌ 严禁生成** |
+[配图/1.jpg](file:///Users/suxiaohan/Desktop/小豆-skill/配图/1.jpg) 与 [配图/2.jpg](file:///Users/suxiaohan/Desktop/小豆-skill/配图/2.jpg) **均为完全合格且期望的四宫格视觉表达与排版**。
+
+* **完全正确的排版与构图**：两者在标题排版、释义段、小豆剧情插画以及单宫格总结文字上都非常优秀。
+* **唯一需要调整细节**：`2.jpg` 最下方多了一行黑色底色的 Hashtag 标签栏（`#豆豆 #底层逻辑...`）。
+* **生成控制指令**：在 AI 绘图生成时，只需要**去除最底下这行黑色标签栏**即可，其余 4 宫格卡片内容保持高水准呈现。
 
 ---
 
 ## 3. 4 宫格 Prompt 编写模版 (Prompt Template)
 
-在调用 `generate_image` 时，可使用如下英文 Prompt 模板：
+在调用 `generate_image` 时，使用如下 Prompt 模板：
 
 ```text
-A 2x2 grid infographic illustration with cute yellow round bean character ("Xiao Dou").
+A 2x2 grid infographic illustration featuring the cute yellow round bean character ("Xiao Dou").
 Clean vector storybook style, soft pastel color palette, clear black Chinese text headers.
 
-Layout: Exactly 4 equal rectangular panels divided by subtle gray lines.
-NO BLACK HASHTAG BAR AT THE BOTTOM. Pure 4-panel grid layout only.
+Layout: Exactly 4 equal rectangular panels divided by subtle lines.
+Do NOT include any black hashtag banner or bottom dark label row. Pure 4-panel grid layout.
 
 Panel 1 (Top-Left):
 - Title: "[宫格1标题]"

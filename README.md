@@ -50,19 +50,15 @@
 
 尺寸规范：2×2 矩形矩阵（整体 16:9 或 4:3 比例），适合放置于文章正文中段作为核心知识总结长图。
 
-#### 1. 标准合格样例 (Standard Layout - 推荐)
-> **视觉亮点**：四宫格结构清晰，内容呈逻辑递进，**最下方纯净无黑色标签栏**。
+#### 1. 配图范例 1 (无最下黑条的四宫格标准图)
+> **视觉亮点**：四宫格结构清晰，内容呈逻辑递进，最下方纯净无黑色标签栏。
 
-<img src="配图/1.jpg" alt="标准 4 宫格正文配图" width="100%" />
+<img src="配图/1.jpg" alt="标准 4 宫格正文配图 1" width="100%" />
 
-#### 2. 禁用样式对比 (Prohibited Style - 说明)
-> **🚫 否定约束**：严格禁止在图片最底部生成黑色底色的 Hashtag 标签栏（如 `#豆豆 #底层逻辑...`），需保持画面整洁。
+#### 2. 配图范例 2 (正确四宫格布局 - 需去除最下黑条)
+> **排版与内容完全正确**：此范例的 4 宫格排版和逻辑插图十分标准，生成时只需**去掉最底部那行黑色 Hashtag 标签栏**（不生成黑条文本）即可达到 100% 理想效果。
 
-<details>
-<summary><b>点击展开查看【带有底部黑条的错误示范】</b></summary>
-<br/>
-<img src="配图/2.jpg" alt="带黑条的错误示范" width="100%" />
-</details>
+<img src="配图/2.jpg" alt="标准 4 宫格正文配图 2" width="100%" />
 
 ---
 
@@ -95,6 +91,8 @@
 3. **视觉区**：小豆 IP 配合具体概念图解
 4. **底栏**：核心金句总结行
 
+> 💡 **关键细节控制**：生成 4 宫格图片时，保持整洁纯净，不要在画面最下方生成黑色 Hashtag 标签栏。
+
 ---
 
 ## 💻 示例用法 (Usage Example)
@@ -112,7 +110,7 @@
 A 2x2 grid infographic illustration featuring the cute yellow round bean character ("Xiao Dou").
 Vector storybook illustration style, soft pastel palette, clear black Chinese text.
 
-NO BLACK HASHTAG BAR AT THE BOTTOM. Pure 4-panel grid layout.
+Layout: Pure 4-panel grid layout. Do NOT include any bottom black hashtag banner.
 
 Panel 1 (Top-Left): Title "原生家庭是第一段 System Prompt", illustration of Xiao Dou with a brain model and a layered pyramid.
 Panel 2 (Top-Right): Title "静默运行与他者的 Prompt", illustration of code editor window and speech bubbles.
@@ -137,8 +135,8 @@ Panel 4 (Bottom-Right): Title "在它运行的那一秒识别它", Xiao Dou reco
 │   ├── contextwindow.png
 │   └── token.png
 └── 配图/                             # 🖼️ 正文 4 宫格配图落地样例
-    ├── 1.jpg                         # ✅ 标准 4 宫格（无底部黑条）
-    └── 2.jpg                         # ❌ 底部带黑条样例 (对比说明)
+    ├── 1.jpg                         # 样例 1 (四宫格标准图)
+    └── 2.jpg                         # 样例 2 (四宫格标准图，生成时去掉最下黑条即可)
 ```
 
 ---
