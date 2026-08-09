@@ -8,13 +8,24 @@
   <b>根据文章内容自动提取核心概念，使用“小豆” IP 形象一键生成微信公众号/技术博客【宽幅封面图】、【2x2 四宫格正文知识配图】与【小红书 3:4 高级感科技哲学长图】。</b>
 </p>
 
+<p align="center">Generate Xiaodou IP covers, WeChat article illustrations, 2×2 infographics, and Xiaohongshu visual cards with an AI agent.</p>
+
 <p align="center">
   <a href="#-效果大聚赏-showcase-gallery"><img src="https://img.shields.io/badge/Visual-Showcase-FFD166?style=for-the-badge&logo=storybook&logoColor=black" alt="Showcase" /></a>
   <a href="#-核心设计架构"><img src="https://img.shields.io/badge/Layout-Templates-7B2CBF?style=for-the-badge&logo=design&logoColor=white" alt="Templates" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-4CC9F0?style=for-the-badge" alt="License" /></a>
+  <a href="https://skills.sh/isdou/xiaodou-skill"><img src="https://skills.sh/b/isdou/xiaodou-skill" alt="skills.sh 安装量" /></a>
 </p>
 
 ---
+
+## ⚡ 一键安装
+
+```bash
+npx skills add https://github.com/isdou/xiaodou-skill --skill xiaodou-cover-generator
+```
+
+安装后可直接说：“请用小豆形象把这篇文章做成一张微信公众号封面。”
 
 ## 📑 目录 (Table of Contents)
 
